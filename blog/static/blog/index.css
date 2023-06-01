@@ -74,3 +74,19 @@
   color: #353535;
 }
 
+#latest-posts {
+  background-color: #ffffff; /* Domyślny kolor tła sekcji */
+}
+
+#latest-posts:hover {
+  background-color: #800080; /* Fioletowy kolor tła sekcji po najechaniu */
+}
+
+#latest-posts h2,
+#latest-posts ul li {
+  padding: 10px;
+}
+
+#latest-posts ul {
+  list-style-type: none;
+}
