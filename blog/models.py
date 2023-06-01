@@ -8,3 +8,7 @@ class BMI(models.Model):
 
     def __str__(self):
         return f"BMI: {self.bmi}"
+
+
+class BMI_prototype(models.Model):
+    calories = models.IntegerField()
