@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import BMI
+from .models import Bmi
 
 
 def starting_page(request):
@@ -19,7 +19,7 @@ def calculate_bmi(request):
         weight = float(request.POST['weight'])
         height = float(request.POST['height'])
         bmi_value = int(weight / ((height / 100) ** 2))  # Obliczanie BMI
-        bmi_obj = BMI.objects.create(weight=weight, height=height, bmi=bmi_value)
+        bmi_obj = Bmi.objects.create(weight=weight, height=height, bmi=bmi_value)
         bmi_obj.save()
 
         # Opisy wyników BMI
