@@ -1,5 +1,7 @@
 #welcome {
-  background: linear-gradient(to right top, #6305dd, #390281);
+  background-image: url("../static/images/bieg.jpg");
+  background-size: cover;
+  background-position: center;
   padding: 6rem 12%;
 }
 
@@ -7,6 +9,7 @@
   display: flex;
   align-items: flex-start;
   margin: 3rem auto;
+  height: 50px;
 }
 
 #welcome img {
@@ -29,8 +32,9 @@
 }
 
 #welcome p {
-  color: white;
+  color: black;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 #latest-posts {
@@ -41,6 +45,10 @@
   margin: -6rem auto 2rem auto;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
 }
+#latest-posts:hover {
+  background-color: lightgray;
+}
+
 
 #latest-posts h2 {
   text-align: center;
@@ -74,19 +82,61 @@
   color: #353535;
 }
 
-#latest-posts {
-  background-color: #ffffff; /* Domyślny kolor tła sekcji */
+
+.post {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.post h1 {
+  color: #000;
 }
 
-#latest-posts:hover {
-  background-color: #800080; /* Fioletowy kolor tła sekcji po najechaniu */
+.post p {
+  color: #000;
 }
 
-#latest-posts h2,
-#latest-posts ul li {
-  padding: 10px;
+.post.normal h1 {
+  color: #118c4e;
 }
 
-#latest-posts ul {
-  list-style-type: none;
+.post.normal p {
+  color: #118c4e;
 }
+
+.post.underweight h1 {
+  color: #c0392b;
+}
+
+.post.underweight p {
+  color: #c0392b;
+}
+
+.post.overweight h1 {
+  color: #c0392b;
+}
+
+.post.overweight p {
+  color: #c0392b;
+}
+
+.post.obese h1 {
+  color: #c0392b;
+}
+
+.post.obese p {
+  color: #c0392b;
+}
+
+#weight-slider:hover {
+  transform: scale(1.5);
+}
+
+#height-slider:hover {
+  transform: scale(1.5);
+}
+
+
+
+
