@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from .import views
 
 urlpatterns = [
     path("", views.starting_page, name="starting-page"),
@@ -8,3 +8,5 @@ urlpatterns = [
     path("posts/<slug:slug>", views.post_detail, name="post-detail-page"),
     path('calculate_bmi/', views.calculate_bmi, name='calculate_bmi'),
 ]
+
+
