@@ -41,3 +41,32 @@ ul {
   border-radius: 12px;
   background-color: white;
 }
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 200%;
+  margin-left: -50%;
+  transition: transform 0.3s;
+}
+
+.slider input[type="range"] {
+  width: 100%;
+}
+
+.slider div {
+  text-align: center;
+  font-weight: 700;
+  font-size: large;
+}
+
+.slider span {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
+
+.slider:hover {
+  transform: scale(1.5);
+}

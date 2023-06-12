@@ -8,7 +8,7 @@
 {% block css_files %}
 
     <link rel="stylesheet" href="../../static/index.css">
-<!--    <link rel="stylesheet" href="../../static/result.css">-->
+
 
 {% endblock %}
 
@@ -23,9 +23,9 @@
                 <article class="post {{ bmi_category }}">
 
 
-                    <h1>Twój wynik BMI:</h1>
-                    <p>Waga: {{ bmi.weight }} kg</p>
-                    <p>Wzrost: {{ bmi.height }} cm</p>
+                    <h1>Your BMI result:</h1>
+                    <p>Weight: {{ bmi.weight }} kg</p>
+                    <p>Height: {{ bmi.height }} cm</p>
                     <p>BMI: {{ bmi.bmi }}</p>
                     <h1>Description:</h1>
                     <p>{{ description }}</p>

@@ -12,30 +12,67 @@
 </head>
 <body>
     <header id="main-navigation">
-        <h1><a href=""> BMI Calculator</a></h1>
         <nav>
-            <a href="">All Posts</a>
+            <a href="/">BMI Calculator</a>
         </nav>
-
+        <nav>
+            </h1><a href="{% url 'posts-page' %}">Calories Calculator</a>
+        </nav>
     </header>
     <section id="welcome">
         <header>
-            <img src="{% static "../static/images/cardio.jpg" %}" alt="Tomas - The Author of this blog"/>
-
-
+            <img src="{% static "../static/images/cardio.jpg" %}" alt="cardio"/>
         </header>
         <p>Take care of your health and the health of your loved ones.<br>
             Check your BMI and what is the next step to long<br>
             and healthy life.</p>
-
     </section>
     {% block content %}
     {% endblock %}
     <section id="about">
-    <h2>What I do</h2>
-    <p> I love programming, I love to help others and I enjoy exploring new technologies in general </p>
-    <p>My goal is to keep on growing as a developer - and if I could help you do the same, I'd be very happy!</p>
-    </section>
+        <p>This is our Django end-project for the Python course. If you like it, you are welcome to contact us! </p>
+        <h1>Contact</h1>
+            <div class="team-container">
+              <div class="team">
+                  <img src="{% static "../static/images/orzel.jpg" %}" alt="cardio"/>
+              </div>
+              <div class="team">
+                <h2>Backend</h2>
+                <div class="team-members">
+                  <div>
+                    <p>Tomasz<br> Ciesla</p>
+
+                    <a href="https://www.linkedin.com/in/tomasz-cie%C5%9Bla-cams-ab66866/">LINKEDIN</a>
+                  </div>
+                  <div>
+                    <p>Sylwia<br> Pokrzywa</p>
+
+                    <a href="https://www.linkedin.com/in/sylwia-pokrzywa">LINKEDIN</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="team">
+                <h2>Frontend</h2>
+                <div class="team-members">
+                  <div>
+                    <p>Tomasz<br> Dymek</p>
+
+                    <a href="linkedin.com/in/tomas-dymek">LINKEDIN</a>
+                  </div>
+                  <div>
+                    <p>Agnieszka<br>Lenart</p>
+
+                    <a href="https://pl.linkedin.com/in/agnieszka-lenart-41b896196">LINKEDIN</a>
+                  </div>
+                </div>
+              </div>
+
+
+            <div class="team">
+              <p>Special thanks to Beata Zalewa for<br> invaluable help and patience.</p>
+            </div>
+            </div>
 
 
 </body>

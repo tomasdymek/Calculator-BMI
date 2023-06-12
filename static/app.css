@@ -33,8 +33,9 @@ h3 {
 
 #main-navigation a {
   text-decoration: none;
-  color: white;
+  color: red;
   font-weight: bold;
+  font-size: 40px;
 }
 
 #main-navigation a:hover,
@@ -45,4 +46,64 @@ h3 {
 #main-navigation h1 a:hover,
 #main-navigation h1 a:active {
   color: white;
+}
+#about {
+  text-align: center;
+  padding: 3rem;
+  background-color: #e48900;
+  margin-top: 5rem;
+}
+
+#about h1 {
+  font-size: 3rem;
+}
+
+#about p {
+  font-size: 1.5rem;
+  color: #353535;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+}
+.team-members div {
+  margin-right: 20px;
+}
+
+.team h1 {
+  text-align: center;
+}
+
+.special-thanks {
+  text-align: center;
+  margin-top: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.team img {
+  transform: scale(0.5);
+}
+.team-container .team img {
+  margin-right: auto;
+  margin-left: 0;
+  padding: 0px;
 }

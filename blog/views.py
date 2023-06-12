@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Bmi
-
+from .models import Calories
 
 def starting_page(request):
     return render(request, "blog/index.html")
@@ -18,11 +18,11 @@ def calculate_bmi(request):
     if request.method == 'POST':
         weight = float(request.POST['weight'])
         height = float(request.POST['height'])
-        bmi_value = int(weight / ((height / 100) ** 2))  # Obliczanie BMI
+        bmi_value = int(weight / ((height / 100) ** 2))
         bmi_obj = Bmi.objects.create(weight=weight, height=height, bmi=bmi_value)
         bmi_obj.save()
 
-        # Opisy wyników BMI
+
         if bmi_value < 18.5:
             description = "Underweight - You should eat more."
             bmi_category = 'underweight'
@@ -40,3 +40,53 @@ def calculate_bmi(request):
 
     return render(request, 'blog/index.html')
 
+
+def calculate_calories(request):
+    if request.method == 'POST':
+        age = int(request.POST['age'])
+        weight = float(request.POST['weight'])
+        height = float(request.POST['height'])
+        status = request.POST['status']
+        gender = request.POST['gender']
+
+        if gender == 'male':
+            if status == 'no':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 5)
+                description = "No physical activity: You have a sedentary lifestyle with no regular exercise."
+            elif status == 'little':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 200)
+                description = "Little physical activity: You engage in light exercises 1-3 times a week."
+            elif status == 'average':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 400)
+                description = "Average physical activity: You engage in moderate exercises 3-5 times a week."
+            elif status == 'high':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 600)
+                description = "High physical activity: You engage in intense exercises daily."
+            else:
+                calories_value = 1500
+                description = "Unknown activity level"
+
+        elif gender == 'female':
+            if status == 'no':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age - 161)
+                description = "No physical activity: You have a sedentary lifestyle with no regular exercise."
+            elif status == 'little':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 39)
+                description = "Little physical activity: You engage in light exercises 1-3 times a week."
+            elif status == 'average':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 239)
+                description = "Average physical activity: You engage in moderate exercises 3-5 times a week."
+            elif status == 'high':
+                calories_value = int(10 * weight + 6.25 * height - 5 * age + 439)
+                description = "High physical activity: You engage in intense exercises daily."
+            else:
+                calories_value = 1500
+                description = "Unknown activity level"
+
+        else:
+            calories_value = 1500
+            description = "Unknown gender"
+
+        return render(request, 'blog/result_calories.html', {'calories': calories_value, 'description': description})
+
+    return render(request, 'blog/index.html')

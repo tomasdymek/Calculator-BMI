@@ -35,6 +35,8 @@
   color: black;
   font-size: 1.5rem;
   text-align: center;
+  margin-right: 400px;
+  margin-left:200px;
 }
 
 #latest-posts {
@@ -65,23 +67,6 @@
 #latest-posts li {
   flex: 1;
 }
-
-#about {
-  text-align: center;
-  padding: 3rem;
-  background-color: #e48900;
-  margin-top: 5rem;
-}
-
-#about h2 {
-  font-size: 3rem;
-}
-
-#about p {
-  font-size: 1.5rem;
-  color: #353535;
-}
-
 
 .post {
   display:flex;
@@ -129,6 +114,7 @@
   color: #c0392b;
 }
 
+
 #weight-slider:hover {
   transform: scale(1.5);
 }
@@ -136,6 +122,25 @@
 #height-slider:hover {
   transform: scale(1.5);
 }
+#weight-slider input[type="range"] {
+  width: 200%;
+    margin-left: -50%;
+}
+
+#height-slider input[type="range"] {
+  width: 200%;
+  margin-left: -50%;
+}
+.slider:hover {
+  transform: scale(1.5);
+}
+.slider input[type="range"] {
+  width: 100%;
+
+}
+
+
+
 
 
 

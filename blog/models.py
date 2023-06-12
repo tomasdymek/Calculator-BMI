@@ -30,12 +30,10 @@ PHYSICAL_ACTIVITY_LEVEL = (
     ('high', 'High physical activity (daily physical activity)')
 )
 
-
 class Calories(models.Model):
     age = models.IntegerField()
     weight = models.FloatField()
     height = models.FloatField()
-    status = models.CharField(choices=PHYSICAL_ACTIVITY_LEVEL, max_length=60, default=True)
-
+    status = models.CharField(choices=PHYSICAL_ACTIVITY_LEVEL, max_length=60)
 
 
