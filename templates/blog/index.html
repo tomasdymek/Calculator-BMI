@@ -20,8 +20,8 @@
             <article class="post">
                 <form method="post" action="{% url 'calculate_bmi' %}">
                     {% csrf_token %}
-                    <label for="weight">Weight (kg):</label>
-                    <div class="slider" id="weight-slider">
+                    <br><label for="weight">Weight (kg):</label></br>
+                    <br><div class="slider" id="weight-slider"></br>
                         <div style="text-align: center; font-weight: 700; font-size: large;"><span
                                     id="weightRangeValue">{{ weightMidpoint }}</span> kg
                         </div>
@@ -29,17 +29,16 @@
                                oninput="weightRangeValue.innerText = this.value;">
                         <br>
                     </div>
-                    <label for="height">Height (cm):</label>
-                    <div class="slider" id="height-slider">
+                    <br><label for="height">Height (cm):</label></br>
+                    <br><div class="slider" id="height-slider"></br>
                         <div style="text-align: center; font-weight: 700; font-size: large;"><span
                                     id="heightRangeValue">{{ heightMidpoint }}</span> cm
                         </div>
                         <input type="range" name="height" id="height" min="1" max="251" step="0.5"
                                oninput="heightRangeValue.innerText = this.value;">
-                        <br>
                     </div>
-                    <br>
-                    <input type="submit" value="Click here to check BMI">
+
+                    <br><input type="submit" value="Click here to check BMI"></br>
                 </form>
             </article>
         </li>

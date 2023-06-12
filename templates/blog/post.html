@@ -4,7 +4,7 @@
         <form method="post" action="{% url 'calculate_bmi' %}">
           {% csrf_token %}
           <label for="weight">Waga (kg):</label>
-          <div class="slider">
+            <br><div class="slider"></div></br>
           <div style="text-align: center; font-weight: 700; font-size: large;"><span id="weightRangeValue">90</span> kg</div>
           <input type="range"  name="weight" id="weight" min="45" max="200" step="0.5" oninput="weightRangeValue.innerText = this.value;">
           <br>
