@@ -6,37 +6,44 @@
 {% endblock %}
 
 {% block css_files %}
+
     <link rel="stylesheet" href="../../static/index.css">
+
 {% endblock %}
 
 {% block content %}
 <section id="latest-posts">
     <h2>Enter the data and click the button below.</h2>
 
-    <article class="post">
-        <form method="post" action="{% url 'calculate_bmi' %}">
-            {% csrf_token %}
-            <label for="weight">Weight (kg):</label>
-            <div class="slider" id="weight-slider">
-                <div style="text-align: center; font-weight: 700; font-size: large;">
-                    <span id="weightRangeValue">{{ weightMidpoint }}</span> kg
-                </div>
-                <input type="range" name="weight" id="weight" min="45" max="200" step="0.5"
-                       oninput="weightRangeValue.innerText = this.value;">
-                <br>
-            </div>
-            <label for="height">Height (cm):</label>
-            <div class="slider" id="height-slider">
-                <div style="text-align: center; font-weight: 700; font-size: large;">
-                    <span id="heightRangeValue">{{ heightMidpoint }}</span> cm
-                </div>
-                <input type="range" name="height" id="height" min="1" max="251" step="0.5"
-                       oninput="heightRangeValue.innerText = this.value;">
-                <br>
-            </div>
-            <br>
-            <input type="submit" value="Click here to check BMI">
-        </form>
-    </article>
+    <ul>
+        <li>
+            <article class="post">
+                <form method="post" action="{% url 'calculate_bmi' %}">
+                    {% csrf_token %}
+                    <br><label for="weight">Weight (kg):</label></br>
+                    <br><div class="slider" id="weight-slider"></br>
+                        <div style="text-align: center; font-weight: 700; font-size: large;"><span
+                                    id="weightRangeValue">{{ weightMidpoint }}</span> kg
+                        </div>
+                        <input type="range" name="weight" id="weight" min="45" max="200" step="0.5"
+                               oninput="weightRangeValue.innerText = this.value;">
+                        <br>
+                    </div>
+                    <br><label for="height">Height (cm):</label></br>
+                    <br><div class="slider" id="height-slider"></br>
+                        <div style="text-align: center; font-weight: 700; font-size: large;"><span
+                                    id="heightRangeValue">{{ heightMidpoint }}</span> cm
+                        </div>
+                        <input type="range" name="height" id="height" min="1" max="251" step="0.5"
+                               oninput="heightRangeValue.innerText = this.value;">
+                    </div>
+
+                    <br><input type="submit" value="Click here to check BMI" style ="font: 18pt Arial; colour: blue; background: coral"></br>
+                </form>
+            </article>
+        </li>
+    </ul>
 </section>
+
+
 {% endblock %}
