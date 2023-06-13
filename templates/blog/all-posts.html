@@ -21,8 +21,9 @@
                 <form method="post" action="{% url 'calculate_calories' %}">
                     {% csrf_token %}
 
-                    <label for="gender">Gender:</label>
-                    <select name="gender" id="gender" required>
+                    <br><label for="gender">Gender:</label></br>
+
+                    <br><select name="gender" id="gender" style ="font:13pt Arial" required></br>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
