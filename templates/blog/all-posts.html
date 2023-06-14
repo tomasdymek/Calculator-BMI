@@ -20,7 +20,7 @@
 
                 <form method="post" action="{% url 'calculate_calories' %}">
                     {% csrf_token %}
-
+                <div class="calcfont">
                     <br><label for="gender">Gender:</label></br>
 
                     <br><select name="gender" id="gender" style ="font:13pt Arial" required></br>
@@ -63,8 +63,10 @@
                         <option value="high">High physical activity (daily physical activity)</option>
                     </select>
                     <br><br>
-
-                    <input type="submit" value="Calculate Calories" style ="font: 18pt Arial; colour: blue; background: coral">
+                   <div class="submitstyle">
+                    <input type="submit" value="Calculate Calories">
+                   </div>
+                </div>
                 </form>
             </article>
         </li>
