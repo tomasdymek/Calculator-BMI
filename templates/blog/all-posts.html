@@ -2,13 +2,11 @@
 {% load static %}
 
 {% block title %}
-    All my posts
+    Calories Calculator
 {% endblock %}
 
 {% block css_files %}
-
-    <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
-    <link rel="stylesheet" href="../../static/button.css">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
 {% endblock %}
 
 {% block content %}
@@ -18,59 +16,54 @@
     <ul>
         <li>
             <article class="post">
-
                 <form method="post" action="{% url 'calculate_calories' %}">
                     {% csrf_token %}
-
-                    <br><label for="gender">Gender:</label></br>
-
-                    <br><select name="gender" id="gender" style ="font:13pt Arial" required></br>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                    <br><br>
-
-                   <br> <label for="age">Age:</label></br>
-
-                   <br> <div class="slider"> </br>
-                        <div><span id="ageRangeValue">{{ ageMidpoint }}</span></div>
-                        <input type="range" name="age" id="age" min="1" max="100" step="1"
-                               oninput="ageRangeValue.innerText = this.value;">
+                    <div class="calcfont">
+                        <br>
+                        <label for="gender">Gender:</label>
+                        <br>
+                        <select name="gender" id="gender" style="font:13pt Arial" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <br><br>
+                        <label for="age">Age:</label>
+                        <br>
+                        <div class="slider">
+                            <div><span id="ageRangeValue">{{ ageMidpoint }}</span></div>
+                            <input type="range" name="age" id="age" min="1" max="100" step="1" oninput="ageRangeValue.innerText = this.value;">
+                        </div>
+                        <br>
+                        <label for="weight">Weight (kg):</label>
+                        <div class="slider">
+                            <div><span id="weightRangeValue">{{ weightMidpoint }}</span> kg</div>
+                            <input type="range" name="weight" id="weight" min="45" max="200" step="0.5" oninput="weightRangeValue.innerText = this.value;">
+                        </div>
+                        <br>
+                        <label for="height">Height (cm):</label>
+                        <br>
+                        <div class="slider">
+                            <div><span id="heightRangeValue">{{ heightMidpoint }}</span> cm</div>
+                            <input type="range" name="height" id="height" min="1" max="251" step="0.5" oninput="heightRangeValue.innerText = this.value;">
+                        </div>
+                        <br>
+                        <label for="status">Physical Activity Level:</label>
+                        <br>
+                        <select name="status" id="status" style="font:13pt Arial" required>
+                            <option value="no">No physical activity</option>
+                            <option value="little">Little physical activity (1-3 times a week)</option>
+                            <option value="average">Average physical activity (3-5 times a week)</option>
+                            <option value="high">High physical activity (daily physical activity)</option>
+                        </select>
+                        <br><br>
+                        <div class="submitstyle">
+                            <input type="submit" value="Calculate Calories">
+                        </div>
                     </div>
-
-
-                    <br><label for="weight">Weight (kg):</label></br>
-                    <br><div class="slider"></br>
-                        <div><span id="weightRangeValue">{{ weightMidpoint }}</span> kg</div>
-                        <input type="range" name="weight" id="weight" min="45" max="200" step="0.5"
-                               oninput="weightRangeValue.innerText = this.value;">
-                    </div>
-
-
-                    <br><label for="height">Height (cm):</label></br>
-                    <br><div class="slider"></br>
-                        <div><span id="heightRangeValue">{{ heightMidpoint }}</span> cm</div>
-                        <input type="range" name="height" id="height" min="1" max="251" step="0.5"
-                               oninput="heightRangeValue.innerText = this.value;">
-                    </div>
-
-
-                    <br><label for="status">Physical Activity Level:</label></br>
-                    <br>
-                    <select name="status" id="status" style ="font:13pt Arial" required>
-                        <option value="no">No physical activity</option>
-                        <option value="little">Little physical activity (1-3 times a week)</option>
-                        <option value="average">Average physical activity (3-5 times a week)</option>
-                        <option value="high">High physical activity (daily physical activity)</option>
-                    </select>
-                    <br><br>
-
-                    <input class= "button" type="submit" value="Calculate Calories" style ="font: 18pt Arial;">
                 </form>
             </article>
         </li>
     </ul>
 
 </section>
-
 {% endblock %}

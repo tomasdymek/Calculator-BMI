@@ -2,7 +2,7 @@
   background-image: url("../static/images/bieg.jpg");
   background-size: cover;
   background-position: center;
-  padding: 6rem 12%;
+  padding: 1px 20px 100px 150px;
 }
 
 #welcome header {
@@ -23,16 +23,17 @@
   transform: rotateZ(-5deg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   position: relative;
-  top: 0rem; /* Podniesienie obrazka jeszcze wyżej */
+  top: 0rem;
   left: 0%;
 }
+
 @media (min-width: 768px) {
-  /* Styl tylko dla urządzeń o szerokości większej lub równej 768px (np. komputery) */
   #welcome img {
-    margin-left: 0cm; /* Oblicza wartość marginesu */
-    margin-bottom: 0px;
+    margin-left: 0;
+    margin-bottom: 0;
     margin-top: -50px;
   }
+}
 
 #welcome h2 {
   font-size: 3.5rem;
@@ -51,19 +52,12 @@
 }
 
 @media (min-width: 768px) {
-  /* Styl tylko dla urządzeń o szerokości większej lub równej 768px (np. komputery) */
   #welcome p {
-    margin-left: 4cm; /* Oblicza wartość marginesu */
+    margin-left: 4cm;
     margin-bottom: 20px;
     margin-top: -150px;
   }
-
-  #welcome header {
-    display: block; /* Wyświetla nagłówek jako blok */
-  }
 }
-
-
 
 #latest-posts {
   background-color: white;
@@ -84,13 +78,15 @@
     padding: 2rem 4rem;
   }
 }
+
 #latest-posts:hover {
   background-color: lightgray;
 }
 
-
 #latest-posts h2 {
   text-align: center;
+  color: #111111;
+  font-size: 1.5rem;
 }
 
 #latest-posts ul {
@@ -106,11 +102,12 @@
 }
 
 .post {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+
 .post h1 {
   color: #000;
 }
@@ -151,7 +148,6 @@
   color: #c0392b;
 }
 
-
 #weight-slider:hover {
   transform: scale(1.5);
 }
@@ -159,19 +155,35 @@
 #height-slider:hover {
   transform: scale(1.5);
 }
+
 #weight-slider input[type="range"] {
-  width: 200%;
-  margin-left: -50%;
+  width: 100%;
 }
 
 #height-slider input[type="range"] {
-  width: 200%;
-  margin-left: -50%;
+  width: 100%;
 }
+
 .slider:hover {
   transform: scale(1.5);
 }
+
 .slider input[type="range"] {
   width: 100%;
 }
 
+.calcfont {
+  font-size: 20px;
+  font-family: Arial;
+}
+
+input[type="submit"] {
+  font-size: 18pt;
+  font-family: Arial;
+  background: #368bff;
+  color: #ffffff;
+}
+
+input[type="submit"]:hover {
+  background: #111111;
+}

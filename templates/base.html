@@ -6,86 +6,90 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static '../static/app.css' %}">
-    <link rel="stylesheet" href="{% static '../static/index.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/orzel.jpg' %}">
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
     {% block css_files %}{% endblock %}
 </head>
 <body>
-   <header id="main-navigation">
-  <nav class="navbar navbar-light" style="background-color: transparent;">
-    <div class="left-links">
-      <a href="/">BMI Calculator</a>
-      <a href="{% url 'posts-page' %}">Calories Calculator</a>
-    </div>
-    <div class="logo-search-container">
-      <div class="logo">
-        <img src="static/images/google.jpg" width="75" height="50">
-      </div>
-      <div class="search-form">
-        <form action="https://www.google.com/search" method="GET" target="_blank">
-          <input type="text" name="q" placeholder="Search in Google" />
-          <button type="submit">Szukaj</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+<header id="main-navigation">
+    <nav class="navbar navbar-light" style="background-color: transparent;">
+        <div class="left-links">
+            <a href="/">BMI Calculator</a>
+            <a href="{% url 'posts-page' %}">Calories Calculator</a>
+            <a href="#about">Contact</a>
+        </div>
+        <div class="logo-search-container">
+            <div class="logo">
+                <img src="{% static 'images/google.jpg' %}" width="75" height="50" alt="Google Logo">
+            </div>
+            <div class="search-form">
+                <form action="https://www.google.com/search" method="GET" target="_blank">
+                    <input type="text" name="q" placeholder="Search in Google" />
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 </header>
 
-    <section id="welcome">
-        <header>
-            <img src="{% static "../static/images/cardio.jpg" %}" alt="cardio"/>
-        </header>
-        <p>Take care of your health and the health of your loved ones.<br>
-            Check your BMI and what is the next step to long<br>
-            and healthy life.</p>
-    </section>
-    {% block content %}
-    {% endblock %}
-    <section id="about">
-        <p>This is our Django end-project for the Python course. If you like it, you are welcome to contact us! </p>
-        <h1>Contact</h1>
-            <div class="team-container">
-              <div class="team">
-                  <img src="{% static "../static/images/orzel.jpg" %}" alt="cardio"/>
-              </div>
-              <div class="team">
-                <h2>Backend</h2>
-                <div class="team-members">
-                  <div>
+<section id="welcome">
+    <header>
+        <img src="{% static 'images/cardio.jpg' %}" alt="Cardio">
+    </header>
+    <p>Take care of your health and the health of your loved ones.<br>
+        Check your BMI and what is the next step to a long<br>
+        and healthy life.</p>
+</section>
+
+{% block content %}
+{% endblock %}
+
+<section id="about">
+    <p>This is our Django end-project for the Python course. If you like it, you are welcome to contact us! </p>
+    <h1>Contact</h1>
+    <div class="team-container">
+        <div class="team">
+            <div class="team-members">
+                <div class="padding">
                     <p>Tomasz<br> Ciesla</p>
-
-                    <a href="https://www.linkedin.com/in/tomasz-cie%C5%9Bla-cams-ab66866/">LINKEDIN</a>
-                  </div>
-                  <div>
+                    <a href="https://www.linkedin.com/in/tomasz-cie%C5%9Bla-cams-ab66866/">
+                        <img src="{% static 'images/linkedin2.webp' %}" alt="Linkedin">
+                    </a>
+                </div>
+                <div>
                     <p>Sylwia<br> Pokrzywa</p>
-
-                    <a href="https://www.linkedin.com/in/sylwia-pokrzywa">LINKEDIN</a>
-                  </div>
+                    <a href="https://www.linkedin.com/in/sylwia-pokrzywa">
+                        <img src="{% static 'images/linkedin2.webp' %}" alt="Linkedin">
+                    </a>
                 </div>
-              </div>
-
-              <div class="team">
-                <h2>Frontend</h2>
-                <div class="team-members">
-                  <div>
+            </div>
+        </div>
+        <div class="team">
+            <div class="team-members">
+                <div>
                     <p>Tomasz<br> Dymek</p>
-
-                    <a href="linkedin.com/in/tomas-dymek">LINKEDIN</a>
-                  </div>
-                  <div>
-                    <p>Agnieszka<br>Lenart</p>
-
-                    <a href="https://pl.linkedin.com/in/agnieszka-lenart-41b896196">LINKEDIN</a>
-                  </div>
+                    <a href="https://www.linkedin.com/in/tomas-dymek">
+                        <img src="{% static 'images/linkedin2.webp' %}" alt="Linkedin">
+                    </a>
                 </div>
-              </div>
-
-
-            <div class="team">
-              <p>Special thanks to Beata Zalewa for<br> invaluable help and patience.</p>
+                <div>
+                    <p>Agnieszka<br> Lenart</p>
+                    <a href="https://pl.linkedin.com/in/agnieszka-lenart-41b896196">
+                        <img src="{% static 'images/linkedin2.webp' %}" alt="Linkedin">
+                    </a>
+                </div>
             </div>
-            </div>
+        </div>
+        <div class="team">
+            <p>Special thanks to Beata Zalewa for<br> invaluable help and patience.</p>
+        </div>
+    </div>
+</section>
 
+<footer>
+    <div class="footer">Calculator BMI - best free program to calculate BMI and calories. &copy; 2023 All rights reserved</div>
+</footer>
 
 </body>
 </html>

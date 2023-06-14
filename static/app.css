@@ -17,13 +17,15 @@ h2,
 h3 {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
+  color: #fdfcfc;
+  font-size: 0.75rem;
 }
 
 
 #main-navigation {
   width: 100%;
   height: auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: block;
@@ -45,6 +47,8 @@ h3 {
   display: flex;
   align-items: center;
   margin-left: auto;
+  margin-right: 320px;
+  margin-top: 10px;
 }
 
 .search-form {
@@ -64,7 +68,7 @@ h3 {
 
 #main-navigation a:hover,
 #main-navigation a:active {
-  color: #777777;
+  color: #4f4f4f;
 }
 
 #main-navigation .logo a:hover,
@@ -76,35 +80,38 @@ h3 {
   display: flex;
   align-items: center;
   background-color: transparent;
+  padding-left: 25px;
 }
 
 .content {
-  margin-top: 5rem; /* adjust this value as needed */
+  margin-top: 5rem;
 }
 
 
 
 #about {
   text-align: center;
-  padding: 3rem;
-  background-color: #e48900;
-  margin-top: 5rem;
+  padding: 0rem;
+  background-color: #565656;
 }
 
 #about h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
+  color: #fdfcfc;
 }
 
 #about p {
-  font-size: 1.5rem;
-  color: #353535;
+  font-size: 0.75rem;
+  color: #fdfcfc;
+  padding-top: 20px;
 }
 
 .team-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 0px;
 }
 
 
@@ -122,6 +129,7 @@ h3 {
 }
 .team-members div {
   margin-right: 20px;
+  margin-top: -12px;
 }
 
 .team h1 {
@@ -137,10 +145,33 @@ a {
   color: black;
 }
 .team img {
-  transform: scale(0.5);
+    transform: scale(0.5);
 }
+
 .team-container .team img {
-  margin-right: auto;
-  margin-left: 0;
-  padding: 0px;
+    margin-right: auto;
+    margin-left: 0;
+    padding: 0px;
+}
+
+.team-members img {
+    width: 100px;
+    height: auto;
+
+}
+
+.team-members img:hover {
+    opacity: 0.5;
+}
+
+.footer {
+    background-color: #565656;
+    clear: both;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    font-size: 9px;
+}
+.team-members p {
+  margin-bottom: -25px;
 }
